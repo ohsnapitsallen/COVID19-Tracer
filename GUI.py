@@ -19,6 +19,7 @@ class ContactTracingApp:
         self.gender = tk.StringVar()
         self.date = tk.StringVar()
         self.recentcontacts = tk.StringVar()
+        
 #Design the inputs and text display
         tk.Label(self.app, text="Name", bg='light blue', font=('Arial', 20)).place(relx=0.5, y=120, anchor='center')
         tk.Entry(self.app, textvar=self.name, font=('Arial', 20)).place(relx=0.5, y=160, anchor='center')
@@ -39,3 +40,5 @@ class ContactTracingApp:
         tk.Label(self.app, text="Recent Contacts (comma separated)", bg='light blue', font=('Arial', 20)).place(relx=0.5, y=620, anchor='center')
         tk.Entry(self.app, textvar=self.recentcontacts, font=('Arial', 20)).place(relx=0.5, y=660, anchor='center')
 #Create a function to run the program
+    def run(self):
+        self.app.mainloop()
