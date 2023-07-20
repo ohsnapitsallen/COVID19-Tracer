@@ -11,6 +11,13 @@ class ContactTracingApp:
         self.app.title("COVID-19 Tracer by OhSnapItsAllen")
         self.app.geometry("1280x720")
         self.app.config(bg='light blue')
-#Add user inputs, gender will be a drop down menu  
+
+#Add user inputs, gender will be a drop down menu
+        self.name = tk.StringVar()
+        self.email = tk.StringVar()
+        self.phone = tk.StringVar()
+        self.gender = tk.StringVar()
+        self.date = tk.StringVar()
+        self.recentcontacts = tk.StringVar()
 #Design the inputs and text display
 #Create a function to run the program
