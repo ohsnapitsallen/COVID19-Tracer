@@ -35,5 +35,7 @@ class ContactFunctions(ContactTracingApp):
                     messagebox.showinfo("Found", f"Entry found: {row}")
                     return
         messagebox.showinfo("Not Found", "No entry found")
-        
+
 #Run the app
+app = ContactFunctions()
+app.run()
