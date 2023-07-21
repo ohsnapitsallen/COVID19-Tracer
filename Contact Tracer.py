@@ -16,6 +16,24 @@ class ContactFunctions(ContactTracingApp):
         with open("contact_tracing.csv", "a", newline='') as file:
             writer = csv.writer(file)
             writer.writerow(new_entry)
-        messagebox.showinfo("Success", "Entry has been added successfully")      
+        messagebox.showinfo("Success", "Entry has been added successfully")
+        
 #Create an object for searching entries (ADMIN PASSWORD REQUIRED)
+    def search_entry(self):
+        self.admin_password = "redvelvet"
+        password = simpledialog.askstring("Admin Password", "Enter admin password:", show='*')
+        if password != self.admin_password:
+            messagebox.showerror("Error", "Invalid password")
+            return
+        
+        name = self.name.get()
+        date = self.date.get()
+        with open("contact_tracing.csv", "r") as file:
+            reader = csv.reader(file)
+            for row in reader:
+                if row[0].lower() == name.lower() and row[3] == date:
+                    messagebox.showinfo("Found", f"Entry found: {row}")
+                    return
+        messagebox.showinfo("Not Found", "No entry found")
+        
 #Run the app
